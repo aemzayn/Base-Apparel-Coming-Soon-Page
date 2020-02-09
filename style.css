@@ -9,10 +9,10 @@ body {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 4.75rem;
     width: 60px;
     text-transform: uppercase;
-    letter-spacing: 10px;
+    letter-spacing: 1rem;
     margin-bottom: 25px;
     line-height: 1.1;
     color: hsl(0, 6%, 24%);
@@ -27,7 +27,7 @@ span {
     color: hsl(0, 36%, 70%);
 }
 
-/* Left Container */
+/*---------------------------------------- Left Container -------------------------------------------------*/
 
 
 .left-container {
@@ -37,63 +37,84 @@ span {
     background-image: url(images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-size: 100%;
+    vertical-align: middle;
 }
 
-.left-content>p {
-    /* background-color: chartreuse; */
-    font-size: 16px;
-    width: 450px;
+.logo {
+    display: inline-block;
+    margin-bottom: 150px;
+}
+
+.logo img {
+    width: 125%;
+}
+
+.left-content p {
+    font-size: 18px;
+    width: 480px;
     line-height: 2;
     color: hsl(0, 36%, 70%);
     margin-bottom: 40px;
 }
 
-.logo {
-    /* background-color: blanchedalmond; */
-    display: inline-block;
-    margin-bottom: 150px;
-}
-
 .left-content {
-    /* background-color: blueviolet; */
     margin: 100px 0 0 200px;
 }
 
-
-.input {
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 20px 290px 20px 20px;
-    border-radius: 50px;
-    border: 1px solid hsl(0, 36%, 80%);
-    color: hsl(0, 36%, 70%);
-
+/* Form */
+form {
+    max-width: 500px;
 }
 
-.input:focus {
+
+form input[type=email] {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid hsl(0, 36%, 80%);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-right: none;
+    float: left;
+    width: 80%;
+    background: transparent;
+}
+
+form button {
+    float: left;
+    width: 20%;
+    padding: 18px;
+    background-image: linear-gradient(to bottom right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    box-shadow: -3px 18px 10px rgba(252, 233, 233, 80%);
+    border-radius: 50px;
+    position: relative;
+    right: 20px;
+    bottom: 2px;
+}
+
+input::placeholder {
+    color: hsl(0, 36%, 70%);
+    font-size: 16px;
+}
+
+input:focus {
     color: #000;
     outline: none;
 }
 
-.input:invalid {
+input:invalid {
     border: 1px solid red;
 }
 
-.btn {
-    display: inline-block;
-    position: relative;
-    padding: 15px 40px 15px 40px;
-    border-radius: 50px;
-    /* border: 2px solid red; */
-    top: 5px;
-    right: 97px;
-    background-image: linear-gradient(to bottom right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-    cursor: pointer;
-    box-shadow: -3px 18px 10px rgba(252, 233, 233, 80%);
-}
 
 
 
-/* Right Container */
+
+/*---------------------------  Right Container  -------------------------------------*/
 
 .right-container {
     display: inline-block;
@@ -105,85 +126,89 @@ span {
     background-size: 100%;
 }
 
+
+/*---------------------------  Responsive Version  -------------------------------------*/
+
 @media only screen and (max-width: 375px) {
     body {
-        margin: 0;
-        width: 375px;
+        width: 100vw;
         max-width: 375px;
-        max-height: 375px;
-        height: 375px;
-        font-size: 10px;
-
     }
 
-    h1,
-    p {
-        width: 100px;
-        text-align: center;
-        font-size: 9px;
-    }
-
-    h1 {
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .logo {
-        max-width: 375px;
-        width: 375px;
-        height: auto;
-        background-color: white;
-        margin-bottom: 20px;
-        padding: 0;
-        position: relative;
-        padding: 20px;
-        bottom: 20px;
-        right: 40px;
-
-
-
-    }
-
-    .logo>img {
-        size: 7px;
-    }
+    /* Left Container */
 
     .left-container {
-
-        max-width: 375px;
-        width: 375px;
-        height: 500px;
-        background-color: hotpink;
-        background-size: 375px;
-        display: block
-    }
-
-    .left-container>p {
-        line-height: 1;
+        padding: 0 2rem;
+        height: 700px;
+        background-size: 10px;
     }
 
     .left-content {
-        background-color: hsl(0, 80%, 86%);
         width: 300px;
         margin: 0 auto;
-        padding-top: 20px;
-
     }
 
     .content-text {
         text-align: center;
-        margin: ;
+        position: relative;
+        top: 18rem;
+        height: 500px;
     }
 
-    .input {
-        padding-right: 20px;
+    .logo {
+        background-color: white;
+        padding: 2rem 0;
+        margin-bottom: 0;
     }
 
+    .logo img {
+        width: 120px;
+    }
+
+    .left-container h1 {
+        display: inline;
+        text-align: center;
+        font-size: 3rem;
+        letter-spacing: 1;
+    }
+
+    .left-container p {
+        margin: 1rem 0 2rem;
+        line-height: 1.5;
+        width: fit-content;
+    }
+
+    .left-container input,
+    .left-container .btn {
+        display: flex;
+
+    }
+
+    form input[type="email"] {
+        padding-right: 0;
+        width: 75%;
+    }
+
+    form button {
+        width: 25%;
+        padding: 20px 25px;
+        position: relative;
+        top: 1px;
+    }
+
+    form button img {
+        margin: 0 auto;
+    }
+
+    /* Right Content */
     .right-container {
+        background-image: url(images/hero-mobile.jpg);
+        background-repeat: no-repeat;
         float: none;
-        width: 100px;
-        background-size: 345px auto;
-        display: block;
-
+        width: 100vw;
+        position: absolute;
+        top: 5.5rem;
+        left: 0;
+        height: 250px;
     }
 }
